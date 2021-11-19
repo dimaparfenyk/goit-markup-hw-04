@@ -7,6 +7,8 @@
   --top-section-background-color: #2f303a;
   --card-border-color: #eeeeee;
   --footer-contacts-color: rgba(255, 255, 255, 0.6);
+  --icon-background-color: #f5f4fa;
+  --color-item: #afb1b8;
 }
 body {
   background: #ffffff;
@@ -93,6 +95,8 @@ a {
   margin-left: 50px;
 }
 .contact-link {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -103,11 +107,15 @@ a {
 .contact-link:focus {
   color: var(--accent-color);
 }
-.icon-link {
-  width: 50px;
-  height: 50px;
-  /* background-color: crimson; */
+.contacts-item:hover,
+.contacts-item:focus {
+  color: var(--accent-color);
 }
+.icon-link {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
 /* оформление секции герой */
 .hero-section {
   background-color: var(--top-section-background-color);
@@ -178,6 +186,7 @@ a {
 }
 .about-item .subtitle {
   text-transform: uppercase;
+  margin-top: 30px;
 }
 .about-text {
   font-weight: 400;
@@ -187,6 +196,19 @@ a {
   color: var(--primary-text-color);
 
   margin-top: 10px;
+}
+.about-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 100px;
+  background-color: var(--icon-background-color);
+  border-radius: 4px;
+}
+.about-svg {
+  width: 70px;
+  height: 70px;
+  fill: currentColor;
 }
 /* оформление production-section */
 .production-section {
@@ -222,7 +244,6 @@ a {
 }
 .team-item {
   background-color: #fff;
-  border-radius: 3px;
   padding-bottom: 30px;
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -247,11 +268,109 @@ a {
 
   margin-top: 10px;
 }
+.social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-item {
+  width: 44px;
+  height: 44px;
+  margin-top: 16px;
+}
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  color: var(--color-item);
+}
+.social-link:hover,
+.social-link:focus {
+  color: var(--main-text-color);
+  background-color: var(--accent-color);
+}
+.social-logo {
+  fill: currentColor;
+}
+/* Оформление секции постоянные клиенты */
+.clients-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.clients-section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.clients-item {
+  width: 170px;
+  height: 92px;
+  margin-top: 50px;
+  border: 1px solid #afb1b8;
+}
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-item);
+}
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+.clients-logo {
+  fill: currentColor;
+}
+
 /* оформление футера */
 .footer-section {
   background-color: var(--top-section-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer-title {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.social-link-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.social-link-footer:hover,
+.social-link-footer:focus {
+  background-color: var(--accent-color);
+}
+.bottom-socials-container {
+  margin-left: 70px;
 }
 .footer-section .contacts-list {
   display: flex;
@@ -306,12 +425,9 @@ a {
 .filter-btn:hover,
 .filter-btn:focus {
   background: var(--accent-color);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.62;
-  text-align: center;
-  letter-spacing: 0.03em;
   color: var(--main-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   cursor: pointer;
 }
 /* оформление карточек */
